@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.typ.cryptotracker.core.domain.util.onError
 import com.typ.cryptotracker.core.domain.util.onSuccess
+import com.typ.cryptotracker.crypto.data.networking.RemoteCoinDataSource
 import com.typ.cryptotracker.crypto.domain.CoinDataSource
 import com.typ.cryptotracker.crypto.presentation.models.toCoinUi
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -15,8 +16,11 @@ import kotlinx.coroutines.flow.update
 import kotlinx.coroutines.launch
 
 class CoinListViewModel(
+
     private val coinDataSource: CoinDataSource
+
 ): ViewModel() {
+
     private val _state = MutableStateFlow(CoinListState())
     val state = _state
         .onStart { loadCoins() }
@@ -25,6 +29,7 @@ class CoinListViewModel(
             SharingStarted.WhileSubscribed(5000L),
             CoinListState()
         )
+
     fun onAction(action: CoinListAction){
         when(action) {
             is CoinListAction.OnCoinClick -> {
