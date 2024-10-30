@@ -82,7 +82,7 @@ fun CoinListItem (
             )
             Spacer(modifier = Modifier.height(8.dp))
             PriceChange(
-                change = coinUi.changePercent24hr
+                change = coinUi.changePercent24Hr
             )
         }
     }

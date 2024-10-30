@@ -8,7 +8,6 @@ import com.typ.cryptotracker.core.domain.util.map
 import com.typ.cryptotracker.crypto.data.mappers.toCoin
 import com.typ.cryptotracker.crypto.data.mappers.toCoinPrice
 import com.typ.cryptotracker.crypto.data.networking.dto.CoinHistoryDto
-import com.typ.cryptotracker.crypto.data.networking.dto.CoinPriceDto
 import com.typ.cryptotracker.crypto.data.networking.dto.CoinsResponseDto
 import com.typ.cryptotracker.crypto.domain.Coin
 import com.typ.cryptotracker.crypto.domain.CoinDataSource
